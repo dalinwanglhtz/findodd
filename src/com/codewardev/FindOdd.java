@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class FindOdd {
 
 	public static int findIt(int[] a) {
-		int oddNum = Arrays.stream(a)
+		return Arrays.stream(a)
 		.boxed()
 		.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 		.entrySet().stream()
@@ -17,7 +17,6 @@ public class FindOdd {
 		.map(x->x.getKey())
 		.findFirst()
 		.orElse(-1);
-		return oddNum;
 	}
 
 }
